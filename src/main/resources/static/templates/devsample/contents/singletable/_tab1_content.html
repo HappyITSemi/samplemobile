@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<br/>
+
+<tab1_content>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab-sinsa1" role="tablist">
+    <a class="nav-item nav-link active" id="nav-tab-singletable1" data-toggle="tab" th:href="@{'/devsample/singletable/tab1'}" role="tab" aria-controls="nav-home" aria-selected="true">単票・一覧・検索・編集</a>
+    <a class="nav-item nav-link" id="nav-tab-singletable2" data-toggle="tab" th:href="@{'/devsample/singletable/tab2'}" role="tab" aria-controls="nav-profile" aria-selected="false">コンファーム・フォーム</a>
+    <a class="nav-item nav-link" id="nav-tab-singletable3" data-toggle="tab" th:href="@{'/devsample/singletable/tab3'}" role="tab" aria-controls="nav-contact" aria-selected="false">キャッシュ</a>
+    <a class="nav-item nav-link" id="nav-tab-singletable4" data-toggle="tab" th:href="@{'/devsample/singletable/tab4'}"  role="tab" aria-controls="nav-contact" aria-selected="false">ページネーション</a>
+
+  </div>
+</nav>
+
+<br/>
+■審査画面イメージ<br/>
+<br/>
+■（１）登録情報一覧
+<table class="table table-sm table-bordered">
+<thead>
+  <tr>
+    <th class="table-info" scope="col">業務Ｎｏ</th>
+    <th class="table-info" scope="col">手続き状態</th>
+    <th class="table-info" scope="col">作業名</th>
+    <th class="table-info" scope="col">担当部署</th>
+    <th class="table-info" scope="col">担当者</th>
+  </tr>
+</thead>
+  <tbody>
+    <tr >
+  	  <td scope="row"><a th:href="@{'index-sinsa2'}">12345678</a></td>
+  	  <td>登録申請待ち</td>
+  	  <td>保証申込審査（自動審査①）</td>
+  	  <td>経営管理部門</td>
+  	  <td>ＣＥＣ太郎</td>
+    </tr>
+    <tr >
+  	  <td scope="row">12345679</td>
+  	  <td>登録申請待ち</td>
+  	  <td>保証申込審査（人的判定）</td>　
+  	  <td>経営管理部門</td>
+  	  <td>加佐担当</td>
+    </tr>
+    <tr >
+  	  <td scope="row">12345680</td>
+  	  <td>承認待ち</td>
+  	  <td>保証申込審査（承認）</td>
+  	  <td>経営管理部門</td>
+  	  <td>山田上司</td>
+    </tr>
+    <tr >
+  	  <td scope="row">　</td>
+  	  <td>　</td>
+  	  <td>　</td>
+  	  <td>　</td>
+  	  <td>　</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+<div class="card bg-light mb-3">
+  <div class="card-body">
+自動処理する「業務No」を選択、実行してください。
+  </div>
+</div>
+
+</tab1_content>
+</body>
+</html>

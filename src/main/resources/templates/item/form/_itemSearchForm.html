@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+
+<itemSearchForm>
+
+■単テーブル（例：商品テーブル）の検索「exampleオブジェクト」を利用<br/><br/>
+
+
+<button type="button" class="btn  btn-outline-primary">登録(単票)</button><br/>
+<span class="glyphicons glyphicons-home"></span><br/>
+<!--  ==============================================================            -->
+
+<form action="#" th:action="${item/new}" th:object="${itemFormObject}" method="POST">
+<div class="form-row bg-light">
+      <div class="col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="item-id">id　　　</span>
+          </div>
+          <input type="text" class="form-control" id="id"
+          aria-describedby="item-id" placeholder="id検索">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="item-price">価格　　</span>
+          </div>
+          <input type="text" class="form-control" id="price"
+          aria-describedby="item-price" placeholder="価格">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="item-flag">携帯番号</span>
+          </div>
+          <input type="text" class="form-control" id="flag"
+          aria-describedby="item-flag" placeholder="フラグ">
+        </div>
+
+      </div>
+
+<!--  ==================   -->
+
+      <div class="col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="item-name">名称　　</span>
+          </div>
+          <input type="text" class="form-control" id="name"
+          aria-describedby="item-name" placeholder="名称">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="item-memo">メモ　　</span>
+          </div>
+          <input type="text" class="form-control" id="memo"
+          aria-describedby="item-memo" placeholder="メモ">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="item-created">登録日時</span>
+          </div>
+          <input type="datetime" class="form-control" id="created"
+          aria-describedby="item-created" placeholder="">
+        </div>
+    </div>
+  </div>
+
+    <button class="btn btn-primary" type="submit"><span class="fas fa-search"></span> 検索</button>
+</form>
+  <br/>
+
+</itemSearchForm>
+
+</body>
+</html>

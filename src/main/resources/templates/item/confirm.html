@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>（例）確認画面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/docs.min.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap4-glyphicons/css/bootstrap-glyphicons.css}" rel="stylesheet">
+    <link th:href="@{https://use.fontawesome.com/releases/v5.0.6/css/all.css}" rel="stylesheet">
+</head>
+
+<body>
+
+<th:block th:replace="head/_head-nav :: head-nav"/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <th:block th:replace="menu/_leftmenuItem :: leftmenuItem"/>
+        </div>
+        <div class="col-lg-10">
+        <form action="#" th:action="@{item/new}"  th:object="${itemFormObj}" method="POST">
+            ■Item Confirm List<br/>
+
+            <th:block  th:text="'id='     + ${itemFormObj.id}" />
+            <th:block th:text="'name='   + ${itemFormObj.name}" />
+            <th:block th:text="'prpice=' + ${itemFormObj.price}" />
+            <th:block th:text="'memo='   + ${itemFormObj.memo}" />
+            <th:block th:text="'flag='   + ${itemFormObj.flag}" />
+            <th:block th:text="'created='+ ${itemFormObj.created}" />
+        </form>
+        <button type="submit" class="btn  btn-outline-primary"><span class="fas fa-edit"></span> 登録</button><br/>
+        <br/>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
+<script type="text/javascript" th:src="@{/js/docs.min.js}"></script>
+</body>
+</html>

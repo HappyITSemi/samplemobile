@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+
+<itemAllList>
+■単テーブル（例：商品一覧）<br/><br/>
+
+<form>
+<table class="table table-bordered table-hover table-sm">
+
+    <thead>
+        <tr>
+            <th style="width: 120px" scope="col">編集</th>
+            <th>id</th>
+            <th>名称</th>
+            <th>価格</th>
+            <th>備考</th>
+            <th>フラグ</th>
+            <th>作成日時</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="item:${items}">
+            <td>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1"></label>
+              <button class="btn btn-sm btn-primary" type="submit"><span class="fas fa-edit"></span> 編集
+              </button>
+              </div>
+             </td>
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.price}"></td>
+            <td th:text="${item.memo}"></td>
+            <td th:text="${item.flag}"></td>
+            <td th:text="${item.created}"></td>
+        </tr>
+    </tbody>
+
+</table>
+
+</form>
+<br/>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+</itemAllList>
+
+</body>
+</html>

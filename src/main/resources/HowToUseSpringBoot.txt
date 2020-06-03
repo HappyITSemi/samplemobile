@@ -1,0 +1,7 @@
+
+1. 【Create】Intellijの（またはEclipseSTS）Spring initializerでプロジェクトを作成
+
+2. 【Build】Build 実行　エラーがないことを確かめる
+3. 【設定ファイル】application.properties JAP, DB, Tymeleaf, UTF8等の設定、確認
+4. 【構成ファイル】build.gradle
+

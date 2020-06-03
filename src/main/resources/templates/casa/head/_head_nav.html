@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+  <head-nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" th:fragment="head-nav">
+    <a class="navbar-brand mr-0 mr-md-2" th:href="@{#}"></a>
+
+    <div class="navbar-nav-scroll">
+      <ul class="navbar-nav bd-navbar-nav flex-row">
+        <li class="nav-item"><a class="nav-link  active" th:href="@{index}"><span class="fas fa-home"> CEC</span></a></li>
+        <li class="nav-item">　　　　　</li>
+        <li class="nav-item"><a class="nav-link" th:href="@{index}"><span class="fas fa-code"></span>業務フロー</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/devsample}">　<span class="fas fa-cogs"></span> 開発コード</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{index}">　<span class="fas fa-cloud"></span> 仮想開発環境</a></li>
+      </ul>
+    </div>
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></ul>
+    <a class="btn btn-outline-warning d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#">ログイン: CEC太郎</a>
+
+  </head-nav>
+
+</body>
+</html>

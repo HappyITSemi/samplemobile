@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head></head>
+<body>
+
+<login th:fragment="contents/_login :: login">
+<br/>
+<form class="form-signin" role="form" id="login" th:action="@{/login}" method="post">
+    <div th:if="${iserror}" style="color:red;">
+        <p>ログインできませんでした。やりなおしてください。</p>
+    </div>
+   <div class="text-center mb-4">
+     <p><br/></p>
+     <p> <br/></p>
+     <p> <br/></p>
+     <p> <br/></p>
+     <h3 class="h3 mb-3 font-weight-normal">システム・ログイン</h3>
+     <p> </p>
+     <p> </p>
+   </div>
+
+   <div class="form-label-group">
+     <input type="text" id="username" name="username" class="form-control" placeholder="ログインIDを入力してください" required autofocus>
+     <label for="username"></label>
+   </div>
+
+   <div class="form-label-group">
+     <input type="password" id="inputPassword" name="password" class="form-control" placeholder="パスワードを入力してください" required>
+     <label for="inputPassword"></label>
+   </div>
+
+   <button type="submit" class="btn btn-lg btn-success btn-block" role="button">ログイン</button>
+   <p class="mt-5 mb-3 text-muted text-center">&copy; CEC 2018</p>
+<br/>
+<br/>
+
+<div class="card bg-light mb-3">
+  <div class="card-body">
+	<b>ログイン後の遷移先</b><br/>
+	メニューは、部署単位、業務単位のメニューで<br/>
+	 担当者の画面に遷移する想定です。<br/>
+	 【遷移】<br/>
+	 login.html　→　index.html(左メニュー、中コンテンツ) →　各メニューに遷移
+  </div>
+</div>
+
+</form>
+
+<br/>
+
+</login>
+
+</body>
+</html>
+
+
+

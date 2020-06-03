@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+
+        <leftmenuItem th:fragment="leftmenuItem">
+            <br/>
+            <ul class="list-group nav" id="menu-all" role="tablist">
+<li class="list-group-item active"><span class="fas fa-home"></span> 開発テンプレート</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-yen-sign"></span> 外注工数算出<br/>画面・画面遷移</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-list-alt"><a th:href="@{'item/index'}"> MVCモデル・単表</a></li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-window-restore"></span> MVCモデル・複表</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-arrows-alt"><a th:href="@{'http://localhost:9000/api/items'}"> API・Read・Write</a></li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-arrows-alt"> API-Stream検索</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-database"></span><a th:href="@{'db/postgres/index'}"> DB-PostgreSQL</a></li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-database"></span> DB-MySQL</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-database"></span> DB-Oracle</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-check-square"></span> BootStrap-Validation</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-language"></span> 多国語対応i18n</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-desktop"></span> Docker-開発環境-All</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-desktop"></span> Docker-JBoss/wildFly</li>
+<li class="list-group-item list-group-item-action"><span class="fas fa-envelope"></span> メール送信・AWS</li>
+<li class="list-group-item list-group-item-action">バッチ処理</li>
+<li class="list-group-item list-group-item-action">ファイルアップロード</li>
+            </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="menu-1" role="tabpanel"></div>
+            <div class="tab-pane" id="menu-2" role="tabpanel">menu-2</div>
+            <div class="tab-pane" id="menu-3" role="tabpanel">menu-3</div>
+            <div class="tab-pane" id="menu-4" role="tabpanel">menu-4</div>
+        </div>
+        </leftmenuItem>
+
+    </body>
+</html>

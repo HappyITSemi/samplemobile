@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+
+        <leftmenu th:fragment="leftmenu">
+            <br/>
+            <ul class="list-group nav" id="menu-all" role="tablist">
+                <li class="list-group-item active">新基幹システム</li>
+                <li class="list-group-item list-group-item-action">申込情報登録</li>
+                <li class="list-group-item list-group-item-action"><a th:href="@{'index-sinsa'}">審査</a></li>
+                <li class="list-group-item list-group-item-action">審査共通</li>
+                <li class="list-group-item list-group-item-action">保証契約締結</li>
+                <li class="list-group-item list-group-item-action">初回保証料/請求・入金</li>
+                <li class="list-group-item list-group-item-action">滞納関連</li>
+                <li class="list-group-item list-group-item-action">集金代行</li>
+                <li class="list-group-item list-group-item-action">変更</li>
+                <li class="list-group-item list-group-item-action">承継処理</li>
+                <li class="list-group-item list-group-item-action">年保請求・入金</li>
+                <li class="list-group-item list-group-item-action">解約</li>
+                <li class="list-group-item list-group-item-action">問合せ</li>
+                <li class="list-group-item list-group-item-action">その他平行業務</li>
+                <li class="list-group-item list-group-item-action">事務共通</li>
+                <li class="list-group-item list-group-item-action">契約～解約業務共通</li>
+                <li class="list-group-item list-group-item-action">受電他</li>
+                <li class="list-group-item list-group-item-action">経理</li>
+                <li class="list-group-item list-group-item-action">その他</li>
+            </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="menu-1" role="tabpanel"></div>
+            <div class="tab-pane" id="menu-2" role="tabpanel">...</div>
+            <div class="tab-pane" id="menu-3" role="tabpanel">...</div>
+            <div class="tab-pane" id="menu-4" role="tabpanel">...</div>
+        </div>
+        </leftmenu>
+
+    </body>
+</html>

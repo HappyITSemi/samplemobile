@@ -1,0 +1,108 @@
+- - - - - - - - - - - - - - - - - - - - - - - -
+
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public class Auditable<U> {
+}
+    @CreatedBy
+    @Column(name = "created_by")
+    private U createdBy;
+
+    @CreatedDate
+    @Column(name = "created_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
+
+    @LastModifiedBy
+    @Column(name = "modified_by")
+    private U modifiedBy;
+
+    @LastModifiedDate
+    @Column(name = "modified_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    private  Date modifiedAt;
+
+    public U getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(U createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+- - - - - - - - - - - - - - - - - - - - - - - -
+AbstractEntity
+- - - - - - - - - - - - - - - - - - - - - - - -
+
+@Getter
+@Setter
+@MappedSuperclass
+public class AbstractEntity {
+    @Column(name = "create_datetime")
+    private Date createdDatetime;
+
+    @Column(name = "update_datetime")
+    private Date updatedDatetime;
+
+    @PrePersist
+    public void onPrePersist() {
+        setCreatedDatetime(new LocalDateTime());
+        setUpdatedDatetime(new LocalDateTime());
+    }
+
+    @PreUpdate
+    public void onPreUpdate() {
+        setUpdatedDatetime(new LocalDateTime());
+    }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - -
+	private Long id;
+
+	@Column
+	private String value;
+
+	@Column
+	@CreationTimestamp
+	private LocalDateTime createDateTime;
+
+	@Column
+	@UpdateTimestamp
+	private LocalDateTime updateDateTime;
+
+- - - - - - - - - - - - - - - - - - - - - - - -
+
+・GenerationType.IDENTITY
+・GenerationType.SEQUENCE
+・GenerationType.TABLE
+・GenerationType.AUTO
+
+------・GenerationType.IDENTITY
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="userid")
+    private long userId;
+
+
+------・GenerationType.SEQUENCE
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ITEMID_SEQ")
+    @SequenceGenerator(name = "ITEMID_SEQ", sequenceName = "ITEMID_SEQ", allocationSize = 1)
+    @Column(name="ID")
+    private long Id;
+
+<TABLE>
+    create sequence "ITEMID_SEQ"
+        start with 1
+        increment by 1
+        maxvalue 10000
+        minvalue 1
+        nocache
+        cycle
+        noorder;
+
+
+-------・GenerationType.AUTO
